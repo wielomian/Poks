@@ -8,14 +8,42 @@ import java.util.ArrayList;
 
 public class Table {
 
-    public ArrayList<Card> cardsOnTable = new ArrayList<Card>();
+    private ArrayList<Card> cardsOnTable = new ArrayList<>();
 
-    public void cleanTable(Table table){
-        cardsOnTable.clear();
+    public void getCard() {
+
+        Boolean cardAdded = false;
+        while (!cardAdded) {
+            Card cardToBeAdded = new Card();
+            cardToBeAdded.getCardParameters(cardToBeAdded);
+
+            Boolean existsOnTable = false;
+
+            for (Card cardToBeChecked : cardsOnTable) {
+
+                if (cardToBeAdded.suit == cardToBeChecked.suit && cardToBeAdded.rank == cardToBeChecked.rank) {
+                    existsOnTable = true;
+                    System.out.println("Card already on table: " + cardToBeAdded.rank.toString() + " " + cardToBeAdded.suit.toString());
+                }
+            }
+            if (!existsOnTable) {
+                cardsOnTable.add(cardToBeAdded);
+                System.out.println("Added card: " + cardToBeAdded.rank.toString() + " " + cardToBeAdded.suit.toString());
+                cardAdded = true;
+                }
+        }
     }
 
-    public void distributeFlop(Table table){
+    public void distributeFlop(){
+        for(int i = 0; i < 3; ++i){
+            getCard();
+        }
 
+    }
+
+    public void cleanTable(){
+        cardsOnTable.clear();
+        System.out.println("Table cleaned!");
     }
 
 

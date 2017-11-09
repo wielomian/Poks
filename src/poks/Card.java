@@ -18,7 +18,7 @@ public class Card {
     public Suits suit;
     public Ranks rank;
 
-    public void getCardParameters(Card card){
+    public static void getCardParameters(Card card){
         card.suit = Suits.values()[new Random().nextInt(Suits.values().length)];
         card.rank = Ranks.values()[new Random().nextInt(Ranks.values().length)];
         }

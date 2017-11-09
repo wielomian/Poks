@@ -11,7 +11,7 @@ public class CardTest {
     public void shouldPrintCardData(){
         Card card = new Card();
         card.getCardParameters(card);
-        System.out.println("Params:" + card.rank.toString() + " " + card.suit.toString());
+        System.out.println("Params: " + card.rank.toString() + " " + card.suit.toString());
     }
 
 }
