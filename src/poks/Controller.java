@@ -1,4 +1,4 @@
-package sample;
+package poks;
 
 public class Controller {
 }
