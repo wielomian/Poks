@@ -13,9 +13,7 @@ public class ShowdownsRecognizer {
 
     public void recognizeShowdown(ArrayList<CardGenerator> tableCards, ArrayList<CardGenerator> handCards){
 
-        ArrayList<CardGenerator> allCards = new ArrayList<CardGenerator>();
-
-        allCards.addAll(tableCards);
+        List<CardGenerator> allCards = new ArrayList<CardGenerator>(tableCards);
         allCards.addAll(handCards);
 
         Map<String, Integer> EnumToIntConverter = new HashMap<String, Integer>();
@@ -33,14 +31,22 @@ public class ShowdownsRecognizer {
         EnumToIntConverter.put("KING", 13);
         EnumToIntConverter.put("ACE", 14);
 
-        List<ConcreteCard> Set = new ArrayList<ConcreteCard>();
+        List<ConcreteCard> Set = new ArrayList<>();
 
-        for(int i = 0; i < allCards.size(); ++i ){
+        for(int i = 0; i < allCards.size(); ++i){
 
-            Set.add(new ConcreteCard(EnumToIntConverter.get((allCards.get(i).rank.toString())), allCards.get(i).suit.toString().charAt(0)));
+            Integer rank = EnumToIntConverter.get(allCards.get(i).rank.toString());
+            char suit = allCards.get(i).suit.toString().charAt(0);
+            ConcreteCard card = new ConcreteCard(rank, suit);
+
+            Set.add(card);
         }
-        for(ConcreteCard concretecard : Set){
-            System.out.println(concretecard);
+        // Set is an arraylist created from two input lists of cards on hand and on table
+        // In that point Set contains list of ConcreteCards - which contain an Integer and a char
+
+        for (int i = 0; i < Set.size(); ++i){
+            System.out.print(Set.get(i).rank + " ");
+            System.out.println(Set.get(i).suit);
         }
 
     }
