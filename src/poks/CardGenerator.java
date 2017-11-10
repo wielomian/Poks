@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Created by user on 2017-11-09.
  */
-public class Card {
+public class CardGenerator {
 
     public enum Suits{
         HEARTS, TILES, CLOVERS, PIKES;
@@ -18,9 +18,9 @@ public class Card {
     public Suits suit;
     public Ranks rank;
 
-    public static void getCardParameters(Card card){
-        card.suit = Suits.values()[new Random().nextInt(Suits.values().length)];
-        card.rank = Ranks.values()[new Random().nextInt(Ranks.values().length)];
+    public void getCardParameters(CardGenerator cardGenerator){
+        cardGenerator.suit = Suits.values()[new Random().nextInt(Suits.values().length)];
+        cardGenerator.rank = Ranks.values()[new Random().nextInt(Ranks.values().length)];
         }
 
 }

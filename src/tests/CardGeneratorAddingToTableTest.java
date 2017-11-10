@@ -1,12 +1,11 @@
 package tests;
 import org.junit.Test;
-import poks.Card;
 import poks.Table;
 
 /**
  * Created by user on 2017-11-09.
  */
-public class CardAddingToTableTest {
+public class CardGeneratorAddingToTableTest {
 
     @Test
     public void shouldAddCardsAndAvoidRepeats(){

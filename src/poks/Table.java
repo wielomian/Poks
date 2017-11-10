@@ -8,18 +8,18 @@ import java.util.ArrayList;
 
 public class Table {
 
-    private ArrayList<Card> cardsOnTable = new ArrayList<>();
+    public ArrayList<CardGenerator> cardsOnTable = new ArrayList<>();
 
     public void getCard() {
 
         Boolean cardAdded = false;
         while (!cardAdded) {
-            Card cardToBeAdded = new Card();
+            CardGenerator cardToBeAdded = new CardGenerator();
             cardToBeAdded.getCardParameters(cardToBeAdded);
 
             Boolean existsOnTable = false;
 
-            for (Card cardToBeChecked : cardsOnTable) {
+            for (CardGenerator cardToBeChecked : cardsOnTable) {
 
                 if (cardToBeAdded.suit == cardToBeChecked.suit && cardToBeAdded.rank == cardToBeChecked.rank) {
                     existsOnTable = true;
@@ -38,7 +38,14 @@ public class Table {
         for(int i = 0; i < 3; ++i){
             getCard();
         }
+    }
 
+    public void distributeTurn(){
+        getCard();
+    }
+
+    public void distributeRiver(){
+        getCard();
     }
 
     public void cleanTable(){
