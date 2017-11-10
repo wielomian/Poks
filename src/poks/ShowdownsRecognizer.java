@@ -1,10 +1,7 @@
 package poks;
 import showdowns.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by user on 2017-11-09.
@@ -41,6 +38,7 @@ public class ShowdownsRecognizer {
 
             Set.add(card);
         }
+        Collections.sort(Set);
         // Set is an arraylist created from two input lists of cards on hand and on table
         // In that point Set contains list of ConcreteCards - which contain an Integer and a char
 

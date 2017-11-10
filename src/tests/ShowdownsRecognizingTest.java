@@ -9,11 +9,11 @@ import java.util.ArrayList;
 /**
  * Created by user on 2017-11-10.
  */
-public class EnumToIntegerAndCharConvertingTest {
+public class ShowdownsRecognizingTest {
 
     @Test
 
-    public void shouldReceiveTwoArrayListsOfEnumsAndReturnOneListOfIntegersAndChars(){
+    public void shouldReceiveTwoArrayListsWithCardsAndRecognizeShowdown(){
 
         ArrayList<CardGenerator> firstList = new ArrayList<>();
         ArrayList<CardGenerator> secondList = new ArrayList<>();
