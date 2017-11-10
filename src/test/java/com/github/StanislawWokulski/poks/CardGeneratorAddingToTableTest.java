@@ -1,6 +1,7 @@
-package tests;
+package java.com.github.StanislawWokulski.poks.poks;
+
+import com.github.StanislawWokulski.poks.poks.model.Table;
 import org.junit.Test;
-import poks.Table;
 
 /**
  * Created by user on 2017-11-09.
@@ -8,11 +9,11 @@ import poks.Table;
 public class CardGeneratorAddingToTableTest {
 
     @Test
-    public void shouldAddCardsAndAvoidRepeats(){
+    public void shouldAddCardsAndAvoidRepeats() {
 
         Table table = new Table();
 
-        for(int i = 0; i < 52; ++i){
+        for (int i = 0; i < 52; ++i) {
             table.getCard();
         }
         table.cleanTable();
@@ -20,7 +21,7 @@ public class CardGeneratorAddingToTableTest {
     }
 
     @Test
-    public void flopDistributing(){
+    public void flopDistributing() {
         Table table = new Table();
         table.distributeFlop();
         table.cleanTable();

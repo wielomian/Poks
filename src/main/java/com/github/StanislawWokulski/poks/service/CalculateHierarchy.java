@@ -1,6 +1,4 @@
-package poks;
-
-import java.util.ArrayList;
+package com.github.StanislawWokulski.poks.poks.service;
 
 /**
  * Created by user on 2017-11-09.
